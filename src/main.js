@@ -14,7 +14,12 @@ $(document).ready(function() {
 
     //make API request with user input
     doctorRequest.getDoctors(searchType, searchInput).then(function(data) {
-      console.log(data);
+      if(data.meta && data.data) {
+        //do stuff with data
+        console.log(data);
+      } else {
+        alert("Your request returned something unexpected. Please try again.");
+      }
     })
   })
 })
