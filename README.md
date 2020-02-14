@@ -1,12 +1,16 @@
 # _Search A Doctor_
 
-#### _An app that shows you a list of doctors that can treat symptoms you search for._, 14 February 2020
+#### _An app that shows you a list of doctors that can treat symptoms you search for based on your current location._, 14 February 2020
 
 #### By _**Jamison Cozart**_
 
 ## Description
 
-_This doctor searching application allows users to input symptoms, or search for a doctor specifically by name. The application will return a list of doctors that fit the search request made by the user. This application uses the BetterDoctor API, making API requests based on the user search requests._
+_This doctor searching application allows users to input symptoms, or search for a doctor specifically by name. The application will return a list of doctors in the users area that fit the search request made by the user. This application uses the BetterDoctor API, making API requests based on the user search requests._
+
+## Prerequisites
+
+* Node.js and npm (comes with node) need to be installed on your computer: https://nodejs.org/en/
 
 ## Setup/Installation Requirements
 
@@ -14,11 +18,18 @@ _This doctor searching application allows users to input symptoms, or search for
     ```
     git clone https://github.com/jamisoncozart/Search-A-Doctor/
     ```
-2. Open working directory in Visual Studio Code or preferred text editor:
+2. Change into project directory: 
     ```
-    code .
+    cd Search-A-Doctor/
     ```
-3. Open `index.html` in Chrome or preferred browser (some styles might change if not openned in chrome)
+3. Install all package dependencies:
+    ```
+    npm install
+    ```
+4. Build webpack bundle and live-server will open automatically:
+    ```
+    npm run start
+    ```
 
 ## Behavior Driven Development Specifications
 
@@ -40,6 +51,7 @@ _This doctor searching application allows users to input symptoms, or search for
 * Javascript
 * jQuery
 * BetterDoctor API
+* Google Maps API
 * Webpack
 * Git
 
