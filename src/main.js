@@ -14,11 +14,11 @@ $(document).ready(function() {
 
     //make API request with user input
     doctorRequest.getDoctors(searchType, searchInput).then(function(data) {
+      console.log(data);
       if(data.meta && data.data) {
         let domAppendString = "";
         let available = false;
         let panelColor = "danger";
-        let docAddress = "";
         for(let i = 0; i < data.data.length; i++) {
           for(let x = 0; x < data.data[i].practices.length; x++) {
             if(data.data[i].practices[x].accepts_new_patients) {
@@ -27,8 +27,9 @@ $(document).ready(function() {
               break;
             }
           }
-          domAppendString += `<div class="doctor card card-${panelColor}"><div class="card-header"><h2 class="docName">${data.data[i].profile.first_name} ${data.data[i].profile.last_name} ${data.data[i].profile.title}</h2></div><div class="card-body"><p class="bio">${data.data[i].profile.bio}</p><ul class="docInfo"><li class="docAvailability>${available}</li><li class="address">${data.data[i].}</li></ul></div></div>`
+          domAppendString += `<div class="doctor card card-${panelColor}"><div class="card-header"><h2 class="docName">${data.data[i].profile.first_name} ${data.data[i].profile.last_name} ${data.data[i].profile.title}</h2></div><div class="card-body"><h3 class="specialty">${data.data[i].specialties[0].description}</h3><p class="bio">${data.data[i].profile.bio}</p><p class="docAvailability>Available: ${available}</p><p class="practiceTitle><strong>${data.data[i].practices[0].name}:</strong></p><ul class="docInfo"><li class="address">Address: ${data.data[i].practices[0].visit_address.street} ${data.data[i].practices[0].visit_address.city} ${data.data[i].practices[0].visit_address.state} ${data.data[i].practices[0].visit_address.zip}</li><li class="phone">Phone: ${data.data[i].practices[0].phones[0].number}</li><li class="website">Website: </li></ul></div></div>`
         }
+        $("div#doctors").html(domAppendString);
       } else {
         alert("Your request returned something unexpected. Please try again.");
       }
