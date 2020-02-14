@@ -7,7 +7,15 @@ import $ from 'jquery';
 
 $(document).ready(function() {
   let doctorRequest = new DoctorService();
-  
-  doctorRequest.getDoctorsBySymptom("neck");
+  $("form#form").submit(function(event) {
+    event.preventDefault();
+    let searchType = $("#searchType").val();
+    let searchInput = $("#searchInput").val();
+
+    //make API request with user input
+    doctorRequest.getDoctors(searchType, searchInput).then(function(data) {
+      console.log(data);
+    })
+  })
 })
 
