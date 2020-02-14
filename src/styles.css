@@ -27,6 +27,12 @@ form button {
   margin: 20px 0;
 }
 
+#doctors img {
+  float: left;
+  height: 100px;
+  width: auto;
+}
+
 div.doctor h3 {
   font-size: 20px;
 }
