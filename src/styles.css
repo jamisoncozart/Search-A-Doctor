@@ -21,3 +21,16 @@ form label {
 form button {
   margin-top: 20px;
 }
+
+/* Doctors Section */
+#doctors div.doctor {
+  margin: 20px 0;
+}
+
+div.doctor h3 {
+  font-size: 20px;
+}
+
+div.doctor .card-body {
+  text-align: left;
+}
