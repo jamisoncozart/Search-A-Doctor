@@ -6,6 +6,21 @@
   <title>Search A Doctor</title>
 </head>
 <body>
-  <h1>Search A Doctor</h1>
+  <div class="container">
+    <h1>Search A Doctor</h1>
+    <form id="form">
+      <label>Search Term:</label>
+      <input class="form-control" type="text" placeholder="search term" id="searchInput" required>
+      <label>Search Type:</label>
+      <select class="form-control" id="searchType">
+        <option>Name</option>
+        <option>Symptom</option>
+      </select>
+      <button type="sumbit" class="btn btn-primary btn-block btn-lg">Search Doctors</button>
+    </form>
+    <div id="doctors">
+      
+    </div>
+  </div>
 </body>
 </html>

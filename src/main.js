@@ -7,6 +7,7 @@ import $ from 'jquery';
 
 $(document).ready(function() {
   let doctorRequest = new DoctorService();
+  
   doctorRequest.getDoctorsBySymptom("neck");
 })
 
