@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <h1>Search A Doctor</h1>
-    <form id="form">
+    <div class="sudoForm">
       <label>Search Term:</label>
       <input class="form-control" type="text" placeholder="search term" id="searchInput" required>
       <label>Search By:</label>
@@ -17,9 +17,8 @@
         <option value="name">Doctor's Name</option>
       </select>
       <button id="locationBtn" class="btn btn-success btn-lg">Get Current Location</button>
-      <button type="submit" class="btn btn-primary btn-block btn-lg">Search A Doctor</button>
-    </form>
-    <p id="locationOutput"></p>
+      <button type="submit" class="btn btn-primary btn-block btn-lg" id="formSubmit">Search A Doctor</button>
+    </div>
     <div id="doctors">
 
     </div>

@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 
-form {
+.sudoForm {
   background-color: #ddd;
   width: 50%;
   margin: auto;
@@ -12,13 +12,13 @@ form {
   border-radius: 5px;
 }
 
-form label {
+label {
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
 }
 
-form button {
+button {
   margin-top: 20px;
 }
 

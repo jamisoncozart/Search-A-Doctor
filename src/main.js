@@ -17,24 +17,40 @@ $(document).ready(function() {
       navigator.geolocation.getCurrentPosition(function(position) {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
-      });
+      }, handleLocationError);
     } else {
-      $("#locationOutput").html("Geolocation is not supported by this browser");
+      alert("Geolocation is not supported by this browser");
     }
   });
-  $("form#form").submit(function(event) {
+  $("#formSubmit").click(function(event) {
     event.preventDefault();
     let searchType = $("#searchType").val();
     let searchInput = $("#searchInput").val();
 
     //make API request with user input
-    doctorRequest.getDoctors(searchType, searchInput).then(function(data) {
-      console.log(data);
+    doctorRequest.getDoctors(searchType, searchInput, latitude, longitude).then(function(data) {
       if(data.meta && data.data) {
-        appendDoctors(data, doctorDiv, latitude, longitude);
+        appendDoctors(data, doctorDiv);
       } else {
         alert("Your request returned something unexpected. Please try again.");
       }
     });
   });
 });
+
+function handleLocationError(error) {
+  switch(error.code) {
+  case error.PERMISSION_DENIED:
+    alert("User denied the request for Geolocation.");
+    break;
+  case error.POSITION_UNAVAILABLE:
+    alert("Location information is unavailable.");
+    break;
+  case error.TIMEOUT:
+    alert("The request to get user location timed out.");
+    break;
+  case error.UNKNOWN_ERROR:
+    alert("An unknown error occurred.");
+    break;
+  }
+}
