@@ -5,7 +5,7 @@ body {
 
 .sudoForm {
   background-color: #ddd;
-  width: 50%;
+  width: 70%;
   margin: auto;
   text-align: left;
   padding: 20px;
@@ -39,4 +39,15 @@ div.doctor h3 {
 
 div.doctor .card-body {
   text-align: left;
+}
+
+iframe {
+  display: none;
+}
+
+.locationDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }
