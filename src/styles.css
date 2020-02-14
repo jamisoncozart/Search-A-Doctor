@@ -41,6 +41,8 @@ div.doctor .card-body {
   text-align: left;
 }
 
+/* Map */
+
 iframe {
   display: none;
 }
