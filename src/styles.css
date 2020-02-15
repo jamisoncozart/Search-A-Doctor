@@ -3,6 +3,12 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
 .sudoForm {
   background-color: #ddd;
   width: 70%;
@@ -10,6 +16,8 @@ body {
   text-align: left;
   padding: 20px;
   border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 label {
@@ -25,6 +33,7 @@ button {
 /* Doctors Section */
 #doctors div.doctor {
   margin: 20px 0;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
 }
 
 #doctors img {
