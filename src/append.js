@@ -19,7 +19,7 @@ export function appendDoctors(data, doctorDiv) {
       let practice = data.data[i].practices[0].name || "";
       let address = data.data[i].practices[0].visit_address.street + " " + data.data[i].practices[0].visit_address.city + ", " + data.data[i].practices[0].visit_address.state + " " + data.data[i].practices[0].visit_address.zip || "";
       let number = data.data[i].practices[0].phones[0].number || "";
-      domAppendString += `<div class="doctor card border-${panelColor}"><div class="card-header border-${panelColor}"><h2 class="docName">${fullName}</h2></div><div class="card-body"><h3 class="specialty">${specialty}}</h3><p class="bio">${bio}</p><p class="docAvailability"><strong>Available: ${available}</strong></p><p class="practiceTitle"><strong>${practice}:</strong></p><ul class="docInfo"><li class="address"><strong>Address: </strong>${address}</li><li class="phone"><strong>Phone: </strong>${number}</li></ul></div></div>`;
+      domAppendString += `<div class="doctor card border-${panelColor}"><div class="card-header border-${panelColor}"><h2 class="docName">${fullName}</h2></div><div class="card-body"><h3 class="specialty">${specialty}</h3><p class="bio">${bio}</p><p class="docAvailability"><strong>Available: ${available}</strong></p><p class="practiceTitle"><strong>${practice}:</strong></p><ul class="docInfo"><li class="address"><strong>Address: </strong>${address}</li><li class="phone"><strong>Phone: </strong>${number}</li></ul></div></div>`;
     }
   }
   doctorDiv.html(domAppendString);
