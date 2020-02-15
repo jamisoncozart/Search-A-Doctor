@@ -11,6 +11,8 @@ _This doctor searching application allows users to input symptoms, or search for
 ## Prerequisites
 
 * Node.js and npm (comes with node) need to be installed on your computer: https://nodejs.org/en/
+* Create an account on BetterDoctor API to get an API key: https://developer.betterdoctor.com/
+* Create a Google API account, activate it on all maps APIs to get API key: https://developers.google.com/maps/documentation/javascript/get-api-key
 
 ## Setup/Installation Requirements
 
@@ -25,6 +27,14 @@ _This doctor searching application allows users to input symptoms, or search for
 3. Install all package dependencies:
     ```
     npm install
+    ```
+4. Add API keys to a .env folder:
+    ```
+    mkdir .env
+    ```
+    ```
+    API_KEY = <your BetterDoctor API key>
+    MAPS_API_KEY = <your google maps API key>
     ```
 4. Build webpack bundle and live-server will open automatically:
     ```
