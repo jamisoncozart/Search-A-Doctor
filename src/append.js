@@ -13,7 +13,13 @@ export function appendDoctors(data, doctorDiv) {
           break;
         }
       }
-      domAppendString += `<div class="doctor card border-${panelColor}"><div class="card-header border-${panelColor}"><h2 class="docName">${data.data[i].profile.first_name} ${data.data[i].profile.last_name} ${data.data[i].profile.title}</h2></div><div class="card-body"><h3 class="specialty">${data.data[i].specialties[0].description}</h3><p class="bio">${data.data[i].profile.bio}</p><p class="docAvailability"><strong>Available: ${available}</strong></p><p class="practiceTitle"><strong>${data.data[i].practices[0].name}:</strong></p><ul class="docInfo"><li class="address"><strong>Address: </strong>${data.data[i].practices[0].visit_address.street} ${data.data[i].practices[0].visit_address.city} ${data.data[i].practices[0].visit_address.state} ${data.data[i].practices[0].visit_address.zip}</li><li class="phone"><strong>Phone: </strong>${data.data[i].practices[0].phones[0].number}</li><li class="website"><strong>Website: </strong></li></ul></div></div>`;
+      let fullName = data.data[i].profile.first_name + " " + data.data[i].profile.last_name + " " + data.data[i].profile.title || "";
+      let specialty = data.data[i].specialties[0].description || "";
+      let bio = data.data[i].profile.bio || "";
+      let practice = data.data[i].practices[0].name || "";
+      let address = data.data[i].practices[0].visit_address.street + " " + data.data[i].practices[0].visit_address.city + ", " + data.data[i].practices[0].visit_address.state + " " + data.data[i].practices[0].visit_address.zip || "";
+      let number = data.data[i].practices[0].phones[0].number || "";
+      domAppendString += `<div class="doctor card border-${panelColor}"><div class="card-header border-${panelColor}"><h2 class="docName">${fullName}</h2></div><div class="card-body"><h3 class="specialty">${specialty}}</h3><p class="bio">${bio}</p><p class="docAvailability"><strong>Available: ${available}</strong></p><p class="practiceTitle"><strong>${practice}:</strong></p><ul class="docInfo"><li class="address"><strong>Address: </strong>${address}</li><li class="phone"><strong>Phone: </strong>${number}</li><li class="website"><strong>Website: </strong></li></ul></div></div>`;
     }
   }
   doctorDiv.html(domAppendString);
