@@ -34,9 +34,10 @@ $(document).ready(function() {
     //make API request with user input
     doctorRequest.getDoctors(searchType, searchInput, latitude, longitude).then(function(data) {
       if(data.meta && data.data) {
-        appendDoctors(data, doctorDiv);
+        console.log('in data if');
+        doctorDiv.html(appendDoctors(data));
       } else {
-        alert("Your request returned something unexpected. Please try again.");
+        doctorDiv.html(data);
       }
     });
   });

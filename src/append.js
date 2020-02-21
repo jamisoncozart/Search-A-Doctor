@@ -1,4 +1,4 @@
-export function appendDoctors(data, doctorDiv) {
+export function appendDoctors(data) {
   let domAppendString = "";
   let available = false;
   let panelColor = "danger";
@@ -23,5 +23,6 @@ export function appendDoctors(data, doctorDiv) {
       domAppendString += `<div class="doctor card border-${panelColor}"><div class="card-header border-${panelColor}"><h2 class="docName">${fullName}</h2></div><div class="card-body"><h3 class="specialty">${specialty}</h3><p class="bio">${bio}</p><p class="docAvailability"><strong>Available: ${available}</strong></p><p class="practiceTitle"><strong>${practice}:</strong></p><ul class="docInfo"><li class="address"><strong>Address: </strong>${address}</li><li class="phone"><strong>Phone: </strong>${number}</li><li class="phone"><strong>Website: </strong><a href="${website}">${website}</a></li></ul></div></div>`;
     }
   }
-  doctorDiv.html(domAppendString);
+  // doctorDiv.html(domAppendString);
+  return domAppendString;
 }

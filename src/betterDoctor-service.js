@@ -10,8 +10,7 @@ export class DoctorService {
           throw Error("Error: API request failed. Please try again");
         }
       } catch(error) {
-        alert(error.message);
-        return false;
+        return error.message;
       }
     } else {
       try {
@@ -23,8 +22,7 @@ export class DoctorService {
           throw Error("Error: API request failed. Please try again");
         }
       } catch(error) {
-        alert(error.message);
-        return false;
+        return error.message;
       }
     }
   }
